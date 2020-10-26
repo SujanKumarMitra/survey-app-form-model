@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @Valid
 @JsonPropertyOrder({ "uid", "type", "question", "required", "options" })
-public class CheckBoxField extends AbstractFormElement implements ChoiceTypeFormField {
+public class CheckBoxField extends AbstractFormField implements ChoiceTypeFormField {
 
 	private static final long serialVersionUID = -947459340183554091L;
 

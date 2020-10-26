@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * @since 2020-10-24
  */
 @Valid
-public abstract class AbstractFormElement implements FormField {
+public abstract class AbstractFormField implements FormField {
 
 	private static final long serialVersionUID = 5980074893003836601L;
 
@@ -23,14 +23,14 @@ public abstract class AbstractFormElement implements FormField {
 	private boolean required;
 
 	@SuppressWarnings("unused")
-	private AbstractFormElement() {
+	private AbstractFormField() {
 	}
 
-	public AbstractFormElement(String question, boolean required) {
+	public AbstractFormField(String question, boolean required) {
 		this(null, question, required);
 	}
 
-	public AbstractFormElement(String uid, String question, boolean required) {
+	public AbstractFormField(String uid, String question, boolean required) {
 		this.uid = uid;
 		this.question = question;
 		this.required = required;

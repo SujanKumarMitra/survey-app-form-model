@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @Valid
 @JsonPropertyOrder({"uid", "type", "question", "required", "pattern" })
-public class TimeField extends AbstractFormElement implements PatternedFormField {
+public class TimeField extends AbstractFormField implements PatternedFormField {
 
 	private static final long serialVersionUID = -8875415602189929487L;
 
