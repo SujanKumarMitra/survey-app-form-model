@@ -14,6 +14,10 @@ public class RestSuccessResponseBuilderFactory {
 	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder(Class<? extends T> classType) {
 		return new SingleDataRestSuccessResponeBuilder<>();
 	}
+	
+	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder() {
+		return new SingleDataRestSuccessResponeBuilder<>();
+	}
 
 	public RestSuccessResponseBuilder<Map<String, Object>> getKeyValueDataBuilder() {
 		return new KeyValueDataRestSuccessResponeBuilder();
