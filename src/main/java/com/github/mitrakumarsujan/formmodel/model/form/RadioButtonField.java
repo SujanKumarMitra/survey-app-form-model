@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @Valid
 @JsonPropertyOrder({"uid", "type", "question", "required", "options" })
-public class RadioButtonField extends AbstractFormField implements ChoiceTypeFormField {
+public class RadioButtonField extends AbstractFormField implements ChoiceBasedFormField {
 
 	private static final long serialVersionUID = -2716594721917010162L;
 

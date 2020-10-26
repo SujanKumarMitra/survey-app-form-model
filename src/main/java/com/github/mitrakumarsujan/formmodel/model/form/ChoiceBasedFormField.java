@@ -6,6 +6,6 @@ import java.util.List;
  * @author Sujan Kumar Mitra
  * @since 2020-10-24
  */
-public interface ChoiceTypeFormField extends FormField {
-	List<OptionField> getOptions();
+public interface ChoiceBasedFormField extends FormField {
+	List<? extends OptionField> getOptions();
 }
