@@ -10,6 +10,7 @@ import com.github.mitrakumarsujan.formmodel.model.response.RestSuccessResponse;
  */
 public class SingleDataRestSuccessResponeBuilder<T> implements RestSuccessResponseBuilder<T> {
 
+	private static final String DEFAULT_MESSAGE = "null";
 	private MutableRestSuccessResponse<T> response;
 
 	public SingleDataRestSuccessResponeBuilder(MutableRestSuccessResponse<T> response) {
@@ -18,6 +19,7 @@ public class SingleDataRestSuccessResponeBuilder<T> implements RestSuccessRespon
 
 	public SingleDataRestSuccessResponeBuilder() {
 		this(new MutableRestSuccessResponse<>());
+		response.setMessage(DEFAULT_MESSAGE);
 	}
 
 	@Override
@@ -40,7 +42,18 @@ public class SingleDataRestSuccessResponeBuilder<T> implements RestSuccessRespon
 
 	@Override
 	public RestSuccessResponse<T> build() {
+		if(messageNotSet()) {
+			response.setMessage(response.getStatus().getReasonPhrase());
+		}
 		return new ImmutableRestSuccessResponse<>(response);
+	}
+
+	private boolean messageNotSet() {
+		try {
+			return response.getMessage().contentEquals(DEFAULT_MESSAGE);
+		} catch (NullPointerException e) {
+			return false;
+		}
 	}
 
 }
