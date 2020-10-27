@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: form-model
+    description: Contains Project Data Models for polls-app
