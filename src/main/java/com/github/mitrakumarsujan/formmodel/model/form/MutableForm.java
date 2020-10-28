@@ -27,8 +27,8 @@ public class MutableForm implements Form {
 		return template;
 	}
 
-	public void setUid(String uid) {
-		this.id = uid;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public void setKey(String key) {

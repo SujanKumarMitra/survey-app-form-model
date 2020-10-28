@@ -11,9 +11,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonDeserialize(as = OptionFieldImpl.class)
 public interface OptionField extends Serializable {
 
-	void setUID(String uid);
+	void setId(String id);
 
-	String getUID();
+	String getId();
 
 	String getText();
 

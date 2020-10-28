@@ -14,7 +14,7 @@ public class OptionFieldImpl implements OptionField {
 
 	private static final long serialVersionUID = 8528535349493451965L;
 
-	private String uid;
+	private String id;
 
 	@NotNull(message = "text cannot be null")
 	@NotEmpty(message = "text cannot be empty")
@@ -25,8 +25,8 @@ public class OptionFieldImpl implements OptionField {
 	private OptionFieldImpl() {
 	}
 
-	public OptionFieldImpl(String uid, String text) {
-		this.uid = uid;
+	public OptionFieldImpl(String id, String text) {
+		this.id = id;
 		this.text = text;
 	}
 
@@ -40,13 +40,13 @@ public class OptionFieldImpl implements OptionField {
 	}
 
 	@Override
-	public String getUID() {
-		return uid;
+	public String getId() {
+		return id;
 	}
 
 	@Override
-	public void setUID(String uid) {
-		this.uid = uid;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override
