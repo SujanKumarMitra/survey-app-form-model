@@ -5,9 +5,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonGetter;
-
 /**
  * @author Sujan Kumar Mitra
  * @since 2020-10-26
@@ -17,22 +14,20 @@ public abstract class AbstractResponse implements Response {
 
 	private static final long serialVersionUID = 1760596082049155077L;
 
-	@NotNull(message = "questionUid can't be null")
-	@NotEmpty(message = "formUid can't be null")
-	@NotBlank(message = "formUid can't be null")
-	private String questionUid;
-	
+	@NotNull(message = "questionId can't be null")
+	@NotEmpty(message = "questionId can't be null")
+	@NotBlank(message = "questionId can't be null")
+	private String questionId;
+
 	private String answer;
 
 	@Override
-	@JsonGetter("questionUid")
-	public String getQuestionUID() {
-		return questionUid;
+	public String getQuestionId() {
+		return questionId;
 	}
-	
-	@JsonAlias({"questionUid"})
-	public void setQuestionUID(String questionUid) {
-		this.questionUid = questionUid;
+
+	public void setQuestionId(String questionId) {
+		this.questionId = questionId;
 	}
 
 	@Override

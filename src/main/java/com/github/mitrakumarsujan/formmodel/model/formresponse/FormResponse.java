@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonDeserialize(as = FormResponseImpl.class)
 @Valid
 public interface FormResponse extends Serializable {
-	String getFormUID();
+	String getFormId();
 
 	Collection<Response> getResponses();
 

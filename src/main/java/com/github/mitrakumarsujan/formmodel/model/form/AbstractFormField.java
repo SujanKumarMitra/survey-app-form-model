@@ -17,7 +17,7 @@ public abstract class AbstractFormField implements FormField {
 
 	private static final long serialVersionUID = 5980074893003836601L;
 
-	private String uid;
+	private String id;
 
 	@NotNull(message = "question cannot be null")
 	@NotEmpty(message = "question cannot be empty")
@@ -33,8 +33,8 @@ public abstract class AbstractFormField implements FormField {
 		this(null, question, required);
 	}
 
-	public AbstractFormField(String uid, String question, boolean required) {
-		this.uid = uid;
+	public AbstractFormField(String id, String question, boolean required) {
+		this.id = id;
 		this.question = question;
 		this.required = required;
 	}
@@ -58,23 +58,15 @@ public abstract class AbstractFormField implements FormField {
 	}
 
 	@Override
-	@JsonGetter("uid")
-	public String getUID() {
-		return getUid();
+	@JsonGetter("id")
+	public String getId() {
+		return id;
 	}
 
 	@Override
-	@JsonSetter("uid")
-	public void setUID(String uid) {
-		setUid(uid);
-	}
-
-	public String getUid() {
-		return uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
+	@JsonSetter("id")
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

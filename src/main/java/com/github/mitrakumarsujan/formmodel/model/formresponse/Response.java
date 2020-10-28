@@ -32,7 +32,7 @@ public interface Response extends Serializable {
 	
 	String getType();
 	
-	String getQuestionUID();
+	String getQuestionId();
 
 	String getAnswer();
 }

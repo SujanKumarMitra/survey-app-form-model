@@ -8,13 +8,13 @@ public class MutableForm implements Form {
 
 	private static final long serialVersionUID = 6928780678671932333L;
 
-	private String uid;
+	private String id;
 	private String key;
 	private FormTemplate template;
 
 	@Override
-	public String getUID() {
-		return uid;
+	public String getId() {
+		return id;
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class MutableForm implements Form {
 	}
 
 	public void setUid(String uid) {
-		this.uid = uid;
+		this.id = uid;
 	}
 
 	public void setKey(String key) {

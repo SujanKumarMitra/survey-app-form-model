@@ -15,18 +15,10 @@ public class FormTemplateImpl implements FormTemplate {
 
 	private static final long serialVersionUID = -6401907225149501099L;
 
-	@NotNull(message = "must contain at least one field present")
+	@NotNull(message = "must contain at least one field")
 	@Size(min = 1)
 	@Valid
 	private List<FormField> fields;
-
-	@SuppressWarnings("unused")
-	private FormTemplateImpl() {
-	}
-
-	public FormTemplateImpl(List<FormField> fields) {
-		this.fields = fields;
-	}
 
 
 	@Override
