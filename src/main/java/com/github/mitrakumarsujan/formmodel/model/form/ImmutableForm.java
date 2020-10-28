@@ -8,14 +8,14 @@ public class ImmutableForm implements Form {
 
 	private static final long serialVersionUID = 4560962341281647833L;
 
-	private final Form delegetee;
+	private final Form delegatee;
 
 	public ImmutableForm(Form delegatee) {
-		this.delegetee = delegatee;
+		this.delegatee = delegatee;
 	}
 
 	public ImmutableForm(String uid, String key, FormTemplate template) {
-		this.delegetee = new Form() {
+		this.delegatee = new Form() {
 
 			private static final long serialVersionUID = -8933069325034718697L;
 
@@ -39,17 +39,17 @@ public class ImmutableForm implements Form {
 
 	@Override
 	public String getUID() {
-		return delegetee.getUID();
+		return delegatee.getUID();
 	}
 
 	@Override
 	public String getKey() {
-		return delegetee.getKey();
+		return delegatee.getKey();
 	}
 
 	@Override
 	public FormTemplate getTemplate() {
-		return delegetee.getTemplate();
+		return delegatee.getTemplate();
 	}
 
 }
