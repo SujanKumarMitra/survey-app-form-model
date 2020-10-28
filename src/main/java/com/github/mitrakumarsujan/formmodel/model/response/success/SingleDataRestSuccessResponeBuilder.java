@@ -42,18 +42,15 @@ public class SingleDataRestSuccessResponeBuilder<T> implements RestSuccessRespon
 
 	@Override
 	public RestSuccessResponse<T> build() {
-		if(messageNotSet()) {
+		if (!isMessageSet()) {
 			response.setMessage(response.getStatus().getReasonPhrase());
 		}
 		return new ImmutableRestSuccessResponse<>(response);
 	}
 
-	private boolean messageNotSet() {
-		try {
-			return response.getMessage().contentEquals(DEFAULT_MESSAGE);
-		} catch (NullPointerException e) {
-			return false;
-		}
+	private boolean isMessageSet() {
+		String message = response.getMessage();
+		return message == null || !message.contains(DEFAULT_MESSAGE);
 	}
 
 }

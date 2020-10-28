@@ -21,7 +21,7 @@ public abstract class AbstractResponse implements Response {
 	@NotEmpty(message = "formUid can't be null")
 	@NotBlank(message = "formUid can't be null")
 	private String questionUid;
-	@NotNull(message = "answerUid can't be null")
+	
 	private String answer;
 
 	@Override
