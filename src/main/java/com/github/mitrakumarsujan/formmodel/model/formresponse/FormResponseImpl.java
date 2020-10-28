@@ -36,7 +36,7 @@ public class FormResponseImpl implements FormResponse {
 	}
 
 	@Override
-	public Collection<? extends Response> getResponses() {
+	public Collection<Response> getResponses() {
 		return responses;
 	}
 

@@ -7,5 +7,5 @@ import java.util.List;
  * @since 2020-10-24
  */
 public interface ChoiceBasedFormField extends FormField {
-	List<? extends OptionField> getOptions();
+	List<OptionField> getOptions();
 }

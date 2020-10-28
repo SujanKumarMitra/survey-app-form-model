@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public interface FormResponse extends Serializable {
 	String getFormUID();
 
-	Collection<? extends Response> getResponses();
+	Collection<Response> getResponses();
 
 	ZoneId getZoneId();
 	

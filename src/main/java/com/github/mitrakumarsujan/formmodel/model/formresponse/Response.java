@@ -4,15 +4,34 @@ import java.io.Serializable;
 
 import javax.validation.Valid;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 /**
  * @author Sujan Kumar Mitra
  * @since 2020-10-26
  */
-@JsonDeserialize(as = ResponseDTO.class)
+//@formatter:off
+@JsonTypeInfo(
+		property = "type", 
+		include = As.EXISTING_PROPERTY, 
+		use = Id.NAME
+)
+@JsonSubTypes({
+	@Type(name = "checkbox",value = CheckBoxResponse.class),
+	@Type(name = "date",value = DateResponse.class),
+	@Type(name = "radio",value = RadioButtonResponse.class),
+	@Type(name = "time",value = TimeResponse.class),
+	@Type(name = "textbox",value = TextBoxResponse.class),
+})// @formatter:on
 @Valid
 public interface Response extends Serializable {
+	
+	String getType();
+	
 	String getQuestionUID();
 
 	String getAnswer();

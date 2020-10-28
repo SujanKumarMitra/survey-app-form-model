@@ -1,24 +1,21 @@
 package com.github.mitrakumarsujan.formmodel.model.formresponse;
 
-import java.util.Optional;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonGetter;
 
 /**
  * @author Sujan Kumar Mitra
  * @since 2020-10-26
  */
-@JsonPropertyOrder({ "questionUid", "answerUid", "optionUid" })
 @Valid
-public class ResponseDTO implements Response, ChoiceBasedResponse {
+public abstract class AbstractResponse implements Response {
 
-	private static final long serialVersionUID = -8752674592300631649L;
+	private static final long serialVersionUID = 1760596082049155077L;
 
 	@NotNull(message = "questionUid can't be null")
 	@NotEmpty(message = "formUid can't be null")
@@ -26,35 +23,21 @@ public class ResponseDTO implements Response, ChoiceBasedResponse {
 	private String questionUid;
 	@NotNull(message = "answerUid can't be null")
 	private String answer;
-	private Optional<String> optionUid;
-
-	public ResponseDTO() {
-		this.optionUid = Optional.empty();
-	}
 
 	@Override
+	@JsonGetter("questionUid")
 	public String getQuestionUID() {
 		return questionUid;
+	}
+	
+	@JsonAlias({"questionUid"})
+	public void setQuestionUID(String questionUid) {
+		this.questionUid = questionUid;
 	}
 
 	@Override
 	public String getAnswer() {
 		return answer;
-	}
-
-	@Override
-	public String getOptionUID() {
-		return optionUid.orElse(null);
-	}
-
-	@JsonAlias({ "optionUid" })
-	public void setOptionUID(String optionUID) {
-		this.optionUid = Optional.ofNullable(optionUID);
-	}
-
-	@JsonAlias({ "questionUid" })
-	public void setQuestionUID(String questionUID) {
-		this.questionUid = questionUID;
 	}
 
 	public void setAnswer(String answer) {

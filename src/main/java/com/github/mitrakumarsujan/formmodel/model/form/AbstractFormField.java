@@ -5,6 +5,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * @author Sujan Kumar Mitra
  * @since 2020-10-24
@@ -55,12 +58,22 @@ public abstract class AbstractFormField implements FormField {
 	}
 
 	@Override
+	@JsonGetter("uid")
 	public String getUID() {
-		return uid;
+		return getUid();
 	}
 
 	@Override
+	@JsonSetter("uid")
 	public void setUID(String uid) {
+		setUid(uid);
+	}
+
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 
