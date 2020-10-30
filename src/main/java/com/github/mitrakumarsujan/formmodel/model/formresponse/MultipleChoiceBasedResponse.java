@@ -9,7 +9,7 @@ import javax.validation.Valid;
  * @since 2020-10-26
  */
 @Valid
-public interface MultipleChoiceBasedResponse extends Response {
+public interface MultipleChoiceBasedResponse extends ChoiceBasedResponse {
 	
 	List<String> getOptionIds();
 

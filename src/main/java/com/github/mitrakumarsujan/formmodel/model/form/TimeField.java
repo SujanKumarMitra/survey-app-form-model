@@ -37,7 +37,7 @@ public class TimeField extends AbstractFormField implements PatternBasedFormFiel
 
 	public void setPattern(String pattern) {
 		if (pattern == null)
-			this.pattern = "^(2[0-3]|[01][0-9]):?([0-5][0-9]):?([0-5][0-9])$";
+			this.pattern = "^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$";
 		else
 			this.pattern = pattern;
 	}
