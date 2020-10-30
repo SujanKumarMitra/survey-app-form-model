@@ -6,5 +6,5 @@ package com.github.mitrakumarsujan.formmodel.model.formresponse;
  */
 public interface SingleChoiceBasedResponse extends Response {
 
-	String getOptionUID();
+	String getOptionId();
 }

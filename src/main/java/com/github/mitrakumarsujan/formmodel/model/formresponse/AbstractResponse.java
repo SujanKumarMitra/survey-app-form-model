@@ -15,8 +15,8 @@ public abstract class AbstractResponse implements Response {
 	private static final long serialVersionUID = 1760596082049155077L;
 
 	@NotNull(message = "questionId can't be null")
-	@NotEmpty(message = "questionId can't be null")
-	@NotBlank(message = "questionId can't be null")
+	@NotEmpty(message = "questionId can't be empty")
+	@NotBlank(message = "questionId can't be blank")
 	private String questionId;
 
 	private String answer;

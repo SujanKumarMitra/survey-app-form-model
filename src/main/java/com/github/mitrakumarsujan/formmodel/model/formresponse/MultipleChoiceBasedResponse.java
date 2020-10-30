@@ -1,6 +1,6 @@
 package com.github.mitrakumarsujan.formmodel.model.formresponse;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -11,6 +11,6 @@ import javax.validation.Valid;
 @Valid
 public interface MultipleChoiceBasedResponse extends Response {
 	
-	Collection<String> getOptionUIDs();
+	List<String> getOptionIds();
 
 }

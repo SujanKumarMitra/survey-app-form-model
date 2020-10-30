@@ -1,8 +1,8 @@
 package com.github.mitrakumarsujan.formmodel.model.formresponse;
 
 import java.io.Serializable;
-import java.time.ZoneId;
-import java.util.Collection;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -17,9 +17,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public interface FormResponse extends Serializable {
 	String getFormId();
 
-	Collection<Response> getResponses();
+	List<Response> getResponses();
 
-	ZoneId getZoneId();
-	
-	void setZoneId(ZoneId zoneId);
+	LocalDateTime getTimestamp();
+
+	void setTimestamp(LocalDateTime timestamp);
 }

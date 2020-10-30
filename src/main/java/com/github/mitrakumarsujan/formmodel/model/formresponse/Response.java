@@ -35,4 +35,6 @@ public interface Response extends Serializable {
 	String getQuestionId();
 
 	String getAnswer();
+	
+	void setAnswer(String answer);
 }

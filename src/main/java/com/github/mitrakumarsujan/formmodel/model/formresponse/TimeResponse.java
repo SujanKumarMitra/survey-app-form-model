@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author Sujan Kumar Mitra
  * @since 2020-10-28
  */
-@JsonPropertyOrder({ "type", "questionUid", "answer" })
+@JsonPropertyOrder({ "type", "questionId", "answer" })
 @Valid
 public class TimeResponse extends AbstractResponse implements Response {
 

@@ -1,7 +1,6 @@
 package com.github.mitrakumarsujan.formmodel.model.formresponse;
 
-import java.time.ZoneId;
-import java.util.Collection;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author Sujan Kumar Mitra
  * @since 2020-10-26
  */
-@JsonPropertyOrder({ "formUid", "zoneId", "responses" })
+@JsonPropertyOrder({ "formId", "zoneId", "responses" })
 @Valid
 public class FormResponseImpl implements FormResponse {
 
@@ -27,7 +26,8 @@ public class FormResponseImpl implements FormResponse {
 	@NotNull(message = "responses can't be null")
 	@Valid
 	private List<Response> responses;
-	private ZoneId zoneId;
+
+	private LocalDateTime timestamp;
 
 	@Override
 	public String getFormId() {
@@ -35,21 +35,22 @@ public class FormResponseImpl implements FormResponse {
 	}
 
 	@Override
-	public Collection<Response> getResponses() {
+	public List<Response> getResponses() {
 		return responses;
-	}
-
-	@Override
-	public ZoneId getZoneId() {
-		return zoneId;
 	}
 
 	public void setResponses(List<Response> responses) {
 		this.responses = responses;
 	}
 
-	public void setZoneId(ZoneId zoneId) {
-		this.zoneId = zoneId;
+	@Override
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+
+	@Override
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	@Override
@@ -59,8 +60,8 @@ public class FormResponseImpl implements FormResponse {
 		builder.append(formId);
 		builder.append(", responses=");
 		builder.append(responses);
-		builder.append(", zoneId=");
-		builder.append(zoneId);
+		builder.append(", timestamp=");
+		builder.append(timestamp);
 		builder.append("]");
 		return builder.toString();
 	}
