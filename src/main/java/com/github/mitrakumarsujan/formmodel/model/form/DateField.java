@@ -34,7 +34,7 @@ public class DateField extends AbstractFormField implements PatternBasedFormFiel
 
 	public void setPattern(String pattern) {
 		if (pattern == null)
-			this.pattern = "yyyy-MM-dd";
+			this.pattern = "^([0-9]{4})(-)(1[0-2]|0[1-9])\\2(3[01]|0[1-9]|[12][0-9])$";
 		else
 			this.pattern = pattern;
 	}
