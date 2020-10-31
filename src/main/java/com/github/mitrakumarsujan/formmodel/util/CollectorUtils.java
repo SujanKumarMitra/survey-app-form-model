@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.util;
+package com.github.mitrakumarsujan.formmodel.util;
 
 import java.util.Collection;
 import java.util.Map;
