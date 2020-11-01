@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.response.success;
+package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
 /**
  * @author Sujan Kumar Mitra

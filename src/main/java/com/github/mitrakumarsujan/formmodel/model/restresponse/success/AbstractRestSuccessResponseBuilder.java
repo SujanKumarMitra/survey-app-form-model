@@ -1,8 +1,8 @@
-package com.github.mitrakumarsujan.formmodel.model.response.success;
+package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
 import org.springframework.http.HttpStatus;
 
-import com.github.mitrakumarsujan.formmodel.model.response.RestSuccessResponse;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.RestSuccessResponse;
 
 /**
  * @author Sujan Kumar Mitra

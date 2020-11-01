@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.response;
+package com.github.mitrakumarsujan.formmodel.model.restresponse;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.response;
+package com.github.mitrakumarsujan.formmodel.model.restresponse;
 
 import org.springframework.http.HttpStatus;
 

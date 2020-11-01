@@ -1,12 +1,12 @@
-package com.github.mitrakumarsujan.formmodel.model.response.success;
+package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import com.github.mitrakumarsujan.formmodel.model.response.EntityList;
-import com.github.mitrakumarsujan.formmodel.model.response.EntityListImpl;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.EntityList;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.EntityListImpl;
 
 /**
  * @author Sujan Kumar Mitra

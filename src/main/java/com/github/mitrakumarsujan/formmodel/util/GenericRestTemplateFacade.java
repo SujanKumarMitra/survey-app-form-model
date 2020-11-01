@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.github.mitrakumarsujan.formmodel.model.response.success.MutableRestSuccessResponse;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.success.MutableRestSuccessResponse;
 
 /**
  * Extension of {@link RestTemplate} with deserialization feature of generic

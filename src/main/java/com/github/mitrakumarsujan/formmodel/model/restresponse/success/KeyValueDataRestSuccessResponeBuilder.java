@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.response.success;
+package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 import org.springframework.http.HttpStatus;
 
-import com.github.mitrakumarsujan.formmodel.model.response.RestSuccessResponse;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.RestSuccessResponse;
 
 /**
  * @author Sujan Kumar Mitra
