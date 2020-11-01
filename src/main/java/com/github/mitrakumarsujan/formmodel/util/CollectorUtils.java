@@ -1,9 +1,10 @@
 package com.github.mitrakumarsujan.formmodel.util;
 
+import static java.util.stream.Collectors.toUnmodifiableMap;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,6 @@ public class CollectorUtils {
 			Function<? super V, ? extends K> keyMapper) {
 
 		return collection	.parallelStream()
-							.collect(Collectors.toUnmodifiableMap(keyMapper, Function.identity()));
+							.collect(toUnmodifiableMap(keyMapper, Function.identity()));
 	}
 }
