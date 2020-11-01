@@ -11,15 +11,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class RestSuccessResponseBuilderFactory {
 
+	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder() {
+		return new SingleDataRestSuccessResponeBuilder<>();
+	}
+
 	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder(Class<? extends T> classType) {
 		return new SingleDataRestSuccessResponeBuilder<>();
 	}
-	
-	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder() {
-		return new SingleDataRestSuccessResponeBuilder<>();
+
+	public <E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder() {
+		return new ListDataRestSuccessResponeBuilder<>();
+	}
+
+	public <E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder(Class<? extends E> listType) {
+		return new ListDataRestSuccessResponeBuilder<>();
 	}
 
 	public RestSuccessResponseBuilder<Map<String, Object>> getKeyValueDataBuilder() {
 		return new KeyValueDataRestSuccessResponeBuilder();
 	}
+
 }
