@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author Sujan Kumar Mitra
  * @since 2020-10-26
  */
-@JsonPropertyOrder({ "formId", "zoneId", "responses" })
+@JsonPropertyOrder({ "formId", "timestamp", "responses" })
 @Valid
 public class FormResponseImpl implements FormResponse {
 
