@@ -1,7 +1,5 @@
 package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
-import java.util.Map;
-
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,10 +23,6 @@ public class RestSuccessResponseBuilderFactory {
 
 	public <E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder(Class<? extends E> listType) {
 		return new ListDataRestSuccessResponeBuilder<>();
-	}
-
-	public RestSuccessResponseBuilder<Map<String, Object>> getKeyValueDataBuilder() {
-		return new KeyValueDataRestSuccessResponeBuilder();
 	}
 
 }

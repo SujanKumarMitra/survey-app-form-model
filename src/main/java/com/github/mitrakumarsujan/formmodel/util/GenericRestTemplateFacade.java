@@ -56,7 +56,7 @@ public class GenericRestTemplateFacade extends RestTemplate {
 				uriVariables.get());
 	}
 	
-	public <T, R> R getRestSuccessResponseData(URI uri, HttpMethod httpMethod, T requestEntity, Class<? extends R> responseType) {
+	public <T, R> R getRestSuccessResponseData(URI uri, HttpMethod httpMethod, T requestEntity, Class<? extends R> responseType) throws RestClientException{
 
 		ResponseEntity<MutableRestSuccessResponse<R>> exchange = exchange(uri, httpMethod,
 				new HttpEntity<>(requestEntity), MutableRestSuccessResponse.class, responseType);

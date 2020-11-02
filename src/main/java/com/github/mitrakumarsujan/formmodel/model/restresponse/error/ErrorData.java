@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.restresponse;
+package com.github.mitrakumarsujan.formmodel.model.restresponse.error;
 
 import java.util.Optional;
 
