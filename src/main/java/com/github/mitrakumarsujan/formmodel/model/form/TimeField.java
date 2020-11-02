@@ -12,12 +12,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"id", "type", "question", "required", "pattern" })
 public class TimeField extends AbstractFormField implements PatternBasedFormField {
 
+	/**
+	 * 
+	 */
+	private static final String DEFAULT_PATTERN = "^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$";
+
 	private static final long serialVersionUID = -8875415602189929487L;
 
 	private String pattern;
 
+	@SuppressWarnings({"unused"})
 	private TimeField() {
-		super(null, false);
+		this(null, false,DEFAULT_PATTERN);
 	}
 
 	public TimeField(String question, boolean required, String pattern) {
@@ -37,7 +43,7 @@ public class TimeField extends AbstractFormField implements PatternBasedFormFiel
 
 	public void setPattern(String pattern) {
 		if (pattern == null)
-			this.pattern = "^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])$";
+			this.pattern = DEFAULT_PATTERN;
 		else
 			this.pattern = pattern;
 	}
