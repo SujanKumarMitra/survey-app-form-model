@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.springframework.http.ResponseEntity;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.github.mitrakumarsujan.formmodel.model.restresponse.error.ErrorData;
+import com.github.mitrakumarsujan.formmodel.model.restresponse.error.ErrorInfo;
 
 /**
  * @author Sujan Kumar Mitra
@@ -14,7 +14,7 @@ import com.github.mitrakumarsujan.formmodel.model.restresponse.error.ErrorData;
 @JsonPropertyOrder({ "status", "code", "message", "errors" })
 public interface RestErrorResponse extends RestResponse, ResponseEntityAdaptor<RestErrorResponse> {
 
-	Collection<ErrorData> getErrors();
+	Collection<ErrorInfo> getErrors();
 
 	@Override
 	default ResponseEntity<RestErrorResponse> toResponseEntity() {

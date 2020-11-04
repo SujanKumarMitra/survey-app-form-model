@@ -28,7 +28,7 @@ public class GenericRestTemplateFacade extends RestTemplate {
 
 	public <T> ResponseEntity<T> exchange(RequestEntity<?> entity, Class<? extends T> responseEntityType,
 			Class<?>... genericTypes) throws RestClientException {
-		
+
 		return exchange(entity, getTypeReference(responseEntityType, genericTypes));
 	}
 
@@ -55,13 +55,17 @@ public class GenericRestTemplateFacade extends RestTemplate {
 		return exchange(url, method, requestEntity, getTypeReference(responseEntityType, genericTypes),
 				uriVariables.get());
 	}
-	
-	public <T, R> R getRestSuccessResponseData(URI uri, HttpMethod httpMethod, T requestEntity, Class<? extends R> responseType) throws RestClientException{
 
-		ResponseEntity<MutableRestSuccessResponse<R>> exchange = exchange(uri, httpMethod,
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public <T, R> R getRestSuccessResponseData(URI uri, HttpMethod httpMethod, T requestEntity,
+			Class<? extends R> responseType) throws RestClientException {
+
+		ResponseEntity<MutableRestSuccessResponse> exchange = exchange(uri, httpMethod,
 				new HttpEntity<>(requestEntity), MutableRestSuccessResponse.class, responseType);
-		return exchange	.getBody()
-						.getData();
+
+		return (R) exchange	.getBody()
+							.getData();
+
 	}
 
 	private <T> ParameterizedTypeReference<T> getTypeReference(Class<? extends T> responseEntityType,

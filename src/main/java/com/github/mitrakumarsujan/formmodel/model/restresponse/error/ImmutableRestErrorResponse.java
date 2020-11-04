@@ -18,7 +18,7 @@ public class ImmutableRestErrorResponse implements RestErrorResponse {
 		this.delegatee = errorResponse;
 	}
 
-	public ImmutableRestErrorResponse(HttpStatus status, String message, Collection<ErrorData> errors) {
+	public ImmutableRestErrorResponse(HttpStatus status, String message, Collection<ErrorInfo> errors) {
 
 		this.delegatee = new RestErrorResponse() {
 
@@ -33,7 +33,7 @@ public class ImmutableRestErrorResponse implements RestErrorResponse {
 			}
 
 			@Override
-			public Collection<ErrorData> getErrors() {
+			public Collection<ErrorInfo> getErrors() {
 				return errors;
 			}
 
@@ -51,7 +51,7 @@ public class ImmutableRestErrorResponse implements RestErrorResponse {
 	}
 
 	@Override
-	public Collection<ErrorData> getErrors() {
+	public Collection<ErrorInfo> getErrors() {
 		return delegatee.getErrors();
 	}
 

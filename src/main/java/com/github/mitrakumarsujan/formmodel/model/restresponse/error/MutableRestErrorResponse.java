@@ -14,17 +14,17 @@ public class MutableRestErrorResponse implements RestErrorResponse {
 
 	private HttpStatus status;
 	private String message;
-	private Collection<ErrorData> errors;
+	private Collection<ErrorInfo> errors;
 
-	public MutableRestErrorResponse(Collection<ErrorData> errors) {
+	public MutableRestErrorResponse(Collection<ErrorInfo> errors) {
 		this(HttpStatus.BAD_REQUEST, errors);
 	}
 
-	public MutableRestErrorResponse(HttpStatus status, Collection<ErrorData> errors) {
+	public MutableRestErrorResponse(HttpStatus status, Collection<ErrorInfo> errors) {
 		this(status, status.getReasonPhrase(), errors);
 	}
 
-	public MutableRestErrorResponse(HttpStatus status, String message, Collection<ErrorData> errors) {
+	public MutableRestErrorResponse(HttpStatus status, String message, Collection<ErrorInfo> errors) {
 		this.status = status;
 		this.message = message;
 		this.errors = errors;
@@ -41,7 +41,7 @@ public class MutableRestErrorResponse implements RestErrorResponse {
 	}
 
 	@Override
-	public Collection<ErrorData> getErrors() {
+	public Collection<ErrorInfo> getErrors() {
 		return errors;
 	}
 
@@ -53,7 +53,7 @@ public class MutableRestErrorResponse implements RestErrorResponse {
 		this.message = message;
 	}
 
-	public void setErrors(Collection<ErrorData> errors) {
+	public void setErrors(Collection<ErrorInfo> errors) {
 		this.errors = errors;
 	}
 

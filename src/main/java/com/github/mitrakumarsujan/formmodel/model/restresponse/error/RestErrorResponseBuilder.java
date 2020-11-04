@@ -1,7 +1,7 @@
 package com.github.mitrakumarsujan.formmodel.model.restresponse.error;
 
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Collections;
 
 import org.springframework.http.HttpStatus;
 
@@ -21,7 +21,7 @@ public class RestErrorResponseBuilder {
 		response.setMessage(DEFAULT_ERROR_MESSAGE);
 	}
 
-	public RestErrorResponseBuilder withErrors(Collection<ErrorData> errors) {
+	public RestErrorResponseBuilder withErrors(Collection<ErrorInfo> errors) {
 		response.setErrors(errors);
 		return this;
 	}
@@ -38,9 +38,7 @@ public class RestErrorResponseBuilder {
 
 	public RestErrorResponse build() {
 		if (response.getErrors() == null) {
-			LinkedList<ErrorData> list = new LinkedList<>();
-			list.add(new ErrorDataImpl(DEFAULT_ERROR_MESSAGE));
-			response.setErrors(list);
+			response.setErrors(Collections.emptyList());
 		}
 		if (!isMessageSet()) {
 			// @formatter:off
