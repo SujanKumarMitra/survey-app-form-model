@@ -14,5 +14,5 @@ public interface ErrorInfo extends Serializable {
 	
 	String getReason();
 	
-	Optional<String> getCause();
+	Optional<Throwable> getCause();
 }

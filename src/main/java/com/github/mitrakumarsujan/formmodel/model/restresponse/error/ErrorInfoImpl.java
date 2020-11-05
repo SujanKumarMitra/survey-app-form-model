@@ -11,19 +11,19 @@ public class ErrorInfoImpl implements ErrorInfo {
 	private static final long serialVersionUID = 7448647029060797298L;
 	
 	private final String reason;
-	private final Optional<String> cause;
+	private final Optional<Throwable> cause;
 
 	public ErrorInfoImpl(String reason) {
 		this(reason, null);
 	}
 
-	public ErrorInfoImpl(String reason, String cause) {
+	public ErrorInfoImpl(String reason, Throwable cause) {
 		this.cause = (cause == null) ? Optional.empty() : Optional.of(cause);
 		this.reason = reason;
 	}
 
 	@Override
-	public Optional<String> getCause() {
+	public Optional<Throwable> getCause() {
 		return cause;
 	}
 
