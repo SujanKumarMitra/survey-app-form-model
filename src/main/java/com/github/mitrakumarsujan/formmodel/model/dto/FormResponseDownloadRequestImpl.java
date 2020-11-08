@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.formmodel.model.api;
+package com.github.mitrakumarsujan.formmodel.model.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

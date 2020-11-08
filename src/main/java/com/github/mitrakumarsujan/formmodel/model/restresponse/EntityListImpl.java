@@ -30,11 +30,6 @@ public class EntityListImpl<E> implements EntityList<E> {
 	}
 
 	@Override
-	public int getSize() {
-		return items == null ? 0 : items.size();
-	}
-
-	@Override
 	public void setItems(List<E> items) {
 		this.items = items;
 	}

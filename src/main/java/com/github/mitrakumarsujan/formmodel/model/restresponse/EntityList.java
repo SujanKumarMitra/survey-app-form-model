@@ -16,5 +16,8 @@ public interface EntityList<E> {
 	
 	public void setOffset(int offset);
 
-	public int getSize();
+	public default int getSize() {
+		List<E> items = getItems();
+		return items == null ? 0 : items.size();
+	}
 }

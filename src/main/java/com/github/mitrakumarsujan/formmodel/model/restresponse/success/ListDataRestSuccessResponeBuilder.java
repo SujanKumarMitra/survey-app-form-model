@@ -17,7 +17,7 @@ import com.github.mitrakumarsujan.formmodel.model.restresponse.EntityListImpl;
 public class ListDataRestSuccessResponeBuilder<E> extends AbstractRestSuccessResponseBuilder<EntityList<E>>
 		implements RestSuccessResponseBuilder<EntityList<E>> {
 
-	public ListDataRestSuccessResponeBuilder<E> withData(List<E> data) {
+	public ListDataRestSuccessResponeBuilder<E> withList(List<E> data) {
 		setIfNull(response::getData, response::setData, this::getEntityList);
 		EntityList<E> entityList = response.getData();
 		setIfNullOrElse(entityList::getItems, entityList::setItems, () -> data, list -> list.addAll(data));

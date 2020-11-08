@@ -9,13 +9,6 @@ import org.springframework.http.HttpStatus;
 public class SingleDataRestSuccessResponeBuilder<T> extends AbstractRestSuccessResponseBuilder<T>
 		implements RestSuccessResponseBuilder<T> {
 
-	public SingleDataRestSuccessResponeBuilder(MutableRestSuccessResponse<T> response) {
-		this.response = response;
-	}
-
-	public SingleDataRestSuccessResponeBuilder() {
-	}
-
 	@Override
 	public SingleDataRestSuccessResponeBuilder<T> withStatus(HttpStatus status) {
 		super.withStatus(status);
