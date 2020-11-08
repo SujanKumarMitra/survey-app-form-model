@@ -8,8 +8,13 @@ import java.util.List;
  */
 public interface EntityList<E> {
 
-	public List<E> getList();
+	public List<E> getItems();
+	
+	public void setItems(List<E> items);
 
-	public void setList(List<E> list);
+	public int getOffset();
+	
+	public void setOffset(int offset);
 
+	public int getSize();
 }

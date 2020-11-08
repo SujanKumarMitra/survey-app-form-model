@@ -1,38 +1,47 @@
 package com.github.mitrakumarsujan.formmodel.model.restresponse;
 
-import java.util.LinkedList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * @author Sujan Kumar Mitra
  * @since 2020-10-31
  */
+@JsonPropertyOrder({ "size", "offset", "items" })
 public class EntityListImpl<E> implements EntityList<E> {
 
-	private List<E> list;
+	private List<E> items;
+	private int offset;
 
-	public EntityListImpl() {
-		this(false);
-	}
-	
-	public EntityListImpl(boolean initialize) {
-		if(initialize) {
-			list = new LinkedList<>();
-		}
-	}
-
-	public EntityListImpl(List<E> list) {
-		this.list = list;
+	public EntityListImpl(List<E> items, int offset) {
+		this.items = items;
+		this.offset = offset;
 	}
 
 	@Override
-	public List<E> getList() {
-		return list;
+	public List<E> getItems() {
+		return items;
 	}
 
 	@Override
-	public void setList(List<E> list) {
-		this.list = list;
+	public int getOffset() {
+		return offset;
+	}
+
+	@Override
+	public int getSize() {
+		return items == null ? 0 : items.size();
+	}
+
+	@Override
+	public void setItems(List<E> items) {
+		this.items = items;
+	}
+
+	@Override
+	public void setOffset(int offset) {
+		this.offset = offset;
 	}
 
 }
