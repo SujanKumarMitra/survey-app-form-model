@@ -1,6 +1,6 @@
 package com.github.mitrakumarsujan.formmodel.util;
 
-import static java.util.stream.Collectors.toUnmodifiableMap;
+import static java.util.stream.Collectors.toMap;
 
 import java.util.Collection;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class CollectorUtils {
 
 		try {
 			return collection	.parallelStream()
-								.collect(toUnmodifiableMap(keyMapper, Function.identity()));
+								.collect(toMap(keyMapper, Function.identity()));
 		} catch (IllegalStateException e) {
 			throw new DuplicateKeyException(e.getLocalizedMessage());
 		}
