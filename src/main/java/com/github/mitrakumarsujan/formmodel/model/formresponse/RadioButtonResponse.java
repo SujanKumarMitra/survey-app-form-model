@@ -22,10 +22,13 @@ public class RadioButtonResponse extends AbstractResponse implements SingleChoic
 	@NotEmpty(message = "optionId can't be empty")
 	private String optionId;
 
-
 	@Override
 	public String getOptionId() {
 		return optionId;
+	}
+
+	public void setOptionId(String optionId) {
+		this.optionId = optionId;
 	}
 
 	@Override
