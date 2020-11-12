@@ -1,28 +1,17 @@
 package com.github.mitrakumarsujan.formmodel.model.restresponse.success;
 
-import org.springframework.stereotype.Component;
-
 /**
- * @author Sujan Kumar Mitra
- * @since 2020-10-25
+ * @author skmitra
+ * @since 2020-11-12
  */
-@Component
-public class RestSuccessResponseBuilderFactory {
+public interface RestSuccessResponseBuilderFactory {
 
-	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder() {
-		return new SingleDataRestSuccessResponeBuilder<>();
-	}
+	<T> RestSuccessResponseBuilder<T> getSingleDataBuilder();
 
-	public <T> RestSuccessResponseBuilder<T> getSingleDataBuilder(Class<? extends T> classType) {
-		return new SingleDataRestSuccessResponeBuilder<>();
-	}
+	<T> RestSuccessResponseBuilder<T> getSingleDataBuilder(Class<? extends T> classType);
 
-	public <E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder() {
-		return new ListDataRestSuccessResponeBuilder<>();
-	}
+	<E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder();
 
-	public <E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder(Class<? extends E> listType) {
-		return new ListDataRestSuccessResponeBuilder<>();
-	}
+	<E> ListDataRestSuccessResponeBuilder<E> getListDataBuilder(Class<? extends E> listType);
 
 }
