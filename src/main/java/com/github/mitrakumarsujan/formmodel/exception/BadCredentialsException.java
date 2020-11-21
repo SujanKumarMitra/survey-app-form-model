@@ -11,22 +11,22 @@ import com.github.mitrakumarsujan.formmodel.model.restresponse.error.ErrorInfoIm
  * @author skmitra
  * @since 2020-11-08
  */
-public class IncorrectCredentialsException extends ClientErrorException {
+public class BadCredentialsException extends ClientErrorException {
 
 	
 	private static final long serialVersionUID = -6555018822234704190L;
 	
-	private static final String DEFAULT_MESSAGE = "Incorrect Credentials";
+	private static final String DEFAULT_MESSAGE = "Bad Credentials";
 
-	public IncorrectCredentialsException() {
+	public BadCredentialsException() {
 		this(singletonList(new ErrorInfoImpl(DEFAULT_MESSAGE)));
 	}
 
-	public IncorrectCredentialsException(String message) {
+	public BadCredentialsException(String message) {
 		this(singletonList(new ErrorInfoImpl(message)));
 	}
 
-	public IncorrectCredentialsException(Collection<ErrorInfo> errors) {
+	public BadCredentialsException(Collection<ErrorInfo> errors) {
 		super(errors);
 	}
 

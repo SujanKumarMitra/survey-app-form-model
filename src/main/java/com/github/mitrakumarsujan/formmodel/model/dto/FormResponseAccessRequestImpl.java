@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  * @author skmitra
  * @since 2020-11-08
  */
-public class FormResponseDownloadRequestImpl implements FormResponseDownloadRequest {
+public class FormResponseAccessRequestImpl implements FormResponseAccessRequest {
 
 	@NotNull(message = "formId can't be null")
 	@NotBlank(message = "formId can't be empty")
@@ -16,10 +16,10 @@ public class FormResponseDownloadRequestImpl implements FormResponseDownloadRequ
 	@NotBlank(message = "formKey can't be empty")
 	private String formKey;
 
-	public FormResponseDownloadRequestImpl() {
+	public FormResponseAccessRequestImpl() {
 	}
 
-	public FormResponseDownloadRequestImpl(String formId, String formKey) {
+	public FormResponseAccessRequestImpl(String formId, String formKey) {
 		this.formId = formId;
 		this.formKey = formKey;
 	}
