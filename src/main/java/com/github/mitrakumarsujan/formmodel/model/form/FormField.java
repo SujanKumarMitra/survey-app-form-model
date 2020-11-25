@@ -17,9 +17,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 @JsonSubTypes({
 	@Type(name = "checkbox",value = CheckBoxField.class),
 	@Type(name = "date",value = DateField.class),
-	@Type(name = "radio",value = RadioButtonField.class),
+	@Type(name = "radio",value = RadioField.class),
 	@Type(name = "time",value = TimeField.class),
-	@Type(name = "textbox",value = TextBoxField.class),
+	@Type(name = "text",value = TextField.class),
 })// @formatter:on
 /**
  * @author Sujan Kumar Mitra

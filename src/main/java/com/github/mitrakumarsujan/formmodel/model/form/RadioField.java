@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @Valid
 @JsonPropertyOrder({"id", "type", "question", "required", "options" })
-public class RadioButtonField extends AbstractFormField implements ChoiceBasedFormField {
+public class RadioField extends AbstractFormField implements ChoiceBasedFormField {
 
 	private static final long serialVersionUID = -2716594721917010162L;
 
@@ -26,16 +26,16 @@ public class RadioButtonField extends AbstractFormField implements ChoiceBasedFo
 	@Size(min = 1)
 	private List<OptionField> options;
 	
-	private RadioButtonField() {
+	private RadioField() {
 		super(null,false);
 	}
 
-	public RadioButtonField(String question, boolean required, List<OptionField> options) {
+	public RadioField(String question, boolean required, List<OptionField> options) {
 		super(question, required);
 		this.options = options;
 	}
 
-	public RadioButtonField(String question, boolean required) {
+	public RadioField(String question, boolean required) {
 		this(question, required, new ArrayList<>());
 	}
 

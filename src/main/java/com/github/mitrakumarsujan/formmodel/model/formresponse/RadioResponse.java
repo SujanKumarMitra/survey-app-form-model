@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonPropertyOrder({ "type", "questionId", "answer", "optionId" })
 @Valid
-public class RadioButtonResponse extends AbstractResponse implements SingleChoiceBasedResponse {
+public class RadioResponse extends AbstractResponse implements SingleChoiceBasedResponse {
 
 	private static final long serialVersionUID = 4444681611793250506L;
 

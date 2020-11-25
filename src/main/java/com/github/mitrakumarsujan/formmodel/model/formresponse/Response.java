@@ -23,9 +23,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 @JsonSubTypes({
 	@Type(name = "checkbox",value = CheckBoxResponse.class),
 	@Type(name = "date",value = DateResponse.class),
-	@Type(name = "radio",value = RadioButtonResponse.class),
+	@Type(name = "radio",value = RadioResponse.class),
 	@Type(name = "time",value = TimeResponse.class),
-	@Type(name = "textbox",value = TextBoxResponse.class),
+	@Type(name = "text",value = TextFieldResponse.class),
 })// @formatter:on
 @Valid
 public interface Response extends Serializable {

@@ -10,21 +10,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @Valid
 @JsonPropertyOrder({"id", "type", "question", "required" })
-public class TextBoxField extends AbstractFormField implements FormField {
+public class TextField extends AbstractFormField implements FormField {
 
 	private static final long serialVersionUID = -3983594967960393598L;
 
-	private TextBoxField() {
+	private TextField() {
 		super(null, false);
 	}
 
-	public TextBoxField(String question, boolean required) {
+	public TextField(String question, boolean required) {
 		super(question, required);
 	}
 
 	@Override
 	public String getType() {
-		return "textbox";
+		return "text";
 	}
 
 	@Override
