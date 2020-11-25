@@ -20,9 +20,9 @@ public class FormResponseImpl implements FormResponse {
 
 	private static final long serialVersionUID = 5764503851925687032L;
 	@NotNull(message = "formId can't be null")
-	@NotEmpty(message = "formId can't be empty")
 	@NotBlank(message = "formId can't be blank")
 	private String formId;
+
 	@NotNull(message = "responses can't be null")
 	@Valid
 	private List<Response> responses;

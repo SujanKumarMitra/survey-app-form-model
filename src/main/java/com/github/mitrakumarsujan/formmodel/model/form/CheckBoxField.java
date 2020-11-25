@@ -21,9 +21,8 @@ public class CheckBoxField extends AbstractFormField implements ChoiceBasedFormF
 	private static final long serialVersionUID = -947459340183554091L;
 
 	@Valid
-	@NotNull(message = "must have at least one option")
-	@NotEmpty(message = "must have at least one option")
-	@Size(min = 1)
+	@NotNull(message = "options can't be null")
+	@Size(min = 1, message = "must have at least one option")
 	private List<OptionField> options;
 	
 	private CheckBoxField() {

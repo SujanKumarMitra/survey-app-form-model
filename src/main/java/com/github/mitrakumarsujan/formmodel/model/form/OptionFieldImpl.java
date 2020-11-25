@@ -17,7 +17,6 @@ public class OptionFieldImpl implements OptionField {
 	private String id;
 
 	@NotNull(message = "text cannot be null")
-	@NotEmpty(message = "text cannot be empty")
 	@NotBlank(message = "text cannot be blank")
 	private String text;
 

@@ -21,14 +21,14 @@ public class FormTemplateImpl implements FormTemplate {
 	private String name;
 	private String description;
 
-	@NotNull(message = "must contain at least one field")
-	@Size(min = 1)
+	@NotNull(message = "fields cannot be null")
+	@Size(min = 1, message = "must contain at least one field")
 	@Valid
 	private List<FormField> fields;
 
 	public FormTemplateImpl() {
-		this.name = "Unnamed";
-		this.description = "No description";
+		this.name = "No Name";
+		this.description = "No Description";
 	}
 
 	@Override

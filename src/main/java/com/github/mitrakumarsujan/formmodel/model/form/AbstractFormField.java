@@ -17,7 +17,6 @@ public abstract class AbstractFormField implements FormField {
 	private String id;
 
 	@NotNull(message = "question cannot be null")
-	@NotEmpty(message = "question cannot be empty")
 	@NotBlank(message = "question cannot be blank")
 	private String question;
 	private boolean required;

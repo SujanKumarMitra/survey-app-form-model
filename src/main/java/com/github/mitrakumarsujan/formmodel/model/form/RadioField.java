@@ -21,9 +21,8 @@ public class RadioField extends AbstractFormField implements ChoiceBasedFormFiel
 	private static final long serialVersionUID = -2716594721917010162L;
 
 	@Valid
-	@NotNull(message = "must have at least one option")
-	@NotEmpty(message = "must have at least one option")
-	@Size(min = 1)
+	@NotNull(message = "options can't be null")
+	@Size(min = 1, message = "must have at least one option")
 	private List<OptionField> options;
 	
 	private RadioField() {

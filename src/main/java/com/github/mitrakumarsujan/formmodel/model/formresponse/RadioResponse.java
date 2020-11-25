@@ -18,7 +18,6 @@ public class RadioResponse extends AbstractResponse implements SingleChoiceBased
 	private static final long serialVersionUID = 4444681611793250506L;
 
 	@NotNull(message = "optionId can't be null")
-	@NotBlank(message = "optionId can't be blank")
 	@NotEmpty(message = "optionId can't be empty")
 	private String optionId;
 
