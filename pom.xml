@@ -13,7 +13,7 @@
 	<artifactId>form-model</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>form-model</name>
-	<description>Contains Common Project Data Models and Utilities for polls-app</description>
+	<description>Contains Common Project Data Models and Utilities for survey-app</description>
 
 	<properties>
 		<java.version>11</java.version>
