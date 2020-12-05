@@ -12,8 +12,8 @@
 	<groupId>com.github.mitrakumarsujan</groupId>
 	<artifactId>form-model</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>form-model</name>
-	<description>Contains Common Project Data Models and Utilities for survey-app</description>
+	<name>Form Model</name>
+	<description>Contains Data Models and Utils for Anonymous Surveys</description>
 
 	<properties>
 		<java.version>11</java.version>
